@@ -1,9 +1,8 @@
 package ru.cristalix.mods
 
-import KotlinMod
+import ru.cristalix.clientapi.KotlinMod
 import ru.cristalix.uiengine.UIEngine
-import ru.cristalix.uiengine.utility.CENTER
-import ru.cristalix.uiengine.utility.text
+import ru.cristalix.uiengine.utility.*
 
 class Mod: KotlinMod() {
 
@@ -13,11 +12,20 @@ class Mod: KotlinMod() {
         val text = text {
             content = "Hello, world!"
             shadow = true
-            align = CENTER
-            origin = CENTER
+            align = TOP
+            origin = TOP
+            offset.y = 2.0
         }
 
-        UIEngine.overlayContext.addChild(text)
+        val rect = rectangle {
+            size = V3(50.0, 20.0)
+            color = Color(255, 255, 100, 0.5)
+            align = CENTER
+            origin = CENTER
+            addChild(text)
+        }
+
+        UIEngine.overlayContext.addChild(rect)
 
     }
 
