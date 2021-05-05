@@ -1,6 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.4.30'
-    id 'dev.implario.bundler' version '3.0.1'
+    id 'dev.implario.bundler' version '3.0.2'
 }
 
 bundler {
